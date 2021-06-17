@@ -10,34 +10,33 @@
     <button onclick="append( '5' )" id="five">5</button>
     <button onclick="append( '6' )" id="six">6</button>
     <canvas id="canvas" width="500" height="500"></canvas><br />
-    <p><img src="images/dice1.png" id="diceImage" style="display: none" />
-    <style>
-      button {
-        width: 70px;
-        height: 50px;
-      }
-    </style>
-    <div id="nextOrder" style ="font-size:50px;">数字を予想してね</div>
+    <p>
+      <img src="images/dice1.png" id="diceImage" style="display: none" />
+      <style>
+        button {
+          width: 70px;
+          height: 50px;
+        }
+      </style>
+    </p>
+
+    <div id="nextOrder" style="font-size: 50px">数字を予想してね</div>
     <input style="font-size: 28px; text-align: right" /><br />
     <script>
       let ctx;
-      var nextOrder=document.getElementById("nextOrder");
-      var img = document.getElementById("diceImage");//サイコロ画像用のid取得
+      var nextOrder = document.getElementById("nextOrder");
+      var img = document.getElementById("diceImage"); //サイコロ画像用のid取得
       var idx = 0; //サイコロの目の変数
       var previdx = 0; //ひとつ前のサイコロの目
-      var rouletteCount = 0;//何回サイコロを回したか
-
-      function update(dice) {
-        document.querySelector("input").value = dice;
-
-      }
+      var rouletteCount = 0; //何回サイコロを回したか
+      var expectedNumber = 0;
 
       function append(dice) {
         // 数字表示
         document.querySelector("input").value = dice;
         console.log(document.querySelector("input").value);
-        nextOrder.innerHTML="ルーレットを回してね";
-        return dice;//今予想している数字を返す
+        nextOrder.innerHTML = "ルーレットを回してね";
+        expectedNumber = dice;
       }
 
       function diceStart() {
@@ -75,11 +74,10 @@
             document.getElementById("five").disabled = false;
             document.getElementById("six").disabled = false;
 
-            if(append()==idx){//予想したサイコロの目が一致していたら
-              nextOrder.innerHTML="あたりだよ";
-            }
-            else nextOrder.innerHTML="はずれ";
-
+            if (expectedNumber == idx) {
+              //予想したサイコロの目が一致していたら
+              nextOrder.innerHTML = "あたりだよ";
+            } else nextOrder.innerHTML = "はずれ";
           }
         }, 200); //15回実行して止める
       }
