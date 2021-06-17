@@ -10,7 +10,7 @@
     <button onclick="append( '5' )" id="five">5</button>
     <button onclick="append( '6' )" id="six">6</button>
     <canvas id="canvas" width="500" height="500"></canvas><br />
-    <img src="dice1.png" id="diceImage" style="display: none" />
+    <p><img src="images/dice1.png" id="diceImage" style="display: none" />
     <style>
       button {
         width: 70px;
@@ -91,7 +91,7 @@
         }
         previdx = idx;
 
-        img.src = "dice" + idx + ".png"; //画像の指定
+        img.src = "images/dice" + idx + ".png"; //画像の指定
         console.log(rouletteCount++);
         diceStart();
       }
