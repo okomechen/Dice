@@ -83,14 +83,15 @@
       }
 
       function diceChange() {
-        idx = Math.floor(Math.random() * 5) + 1; //次のサイコロの目
+        idx = Math.floor(Math.random() * 6) + 1; //次のサイコロの目
         while (previdx == idx) {
-          idx = Math.floor(Math.random() * 5) + 1; //被ったら再抽選
+          idx = Math.floor(Math.random() * 6) + 1; //被ったら再抽選
         }
         previdx = idx;
 
         img.src = "images/dice" + idx + ".png"; //画像の指定
-        console.log(rouletteCount++);
+        console.log(idx);
+        rouletteCount++;
         diceStart();
       }
     </script>
