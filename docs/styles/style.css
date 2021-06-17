@@ -1,0 +1,20 @@
+button  {
+  text-align: center;
+  width: 70px;
+  height: 50px;
+}
+
+input{
+  font-size: 50px;
+  text-align: right;
+}
+
+p#nextOrder{
+  font-size: 50px;
+
+}
+img{
+  width: 500px;
+  height: 500px;
+  display:block;
+}
