@@ -1,4 +1,3 @@
-let ctx;
 var nextOrder = document.getElementById("nextOrder");
 var img = document.getElementById("diceImage"); //サイコロ画像用のid取得
 var idx = 0; //サイコロの目の変数
@@ -15,9 +14,6 @@ function append(dice) {
   document.getElementById("diceRoll").disabled = false;
 }
 
-function diceEnd() {
-  ctx.clearRect(0, 0, 500, 500);
-}
 
 function diceRoll() {
 buttonFalse();//ルーレット中はボタンが押せない
